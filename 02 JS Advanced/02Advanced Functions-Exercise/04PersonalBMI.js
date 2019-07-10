@@ -10,14 +10,14 @@ function solve(name, age, weight, height) {
         status: ''
     }
 
-    if (chart.BMI< 18.5) {
-        chart.status='underweight';
+    if (chart.BMI < 18.5) {
+        chart.status = 'underweight';
     } else if (chart.BMI < 25) {
-        chart.status= 'normal';
-    } else if (chart.BMI< 30) {
-        chart.status='overweight';
+        chart.status = 'normal';
+    } else if (chart.BMI < 30) {
+        chart.status = 'overweight';
     } else {
-        chart.status='obese';
+        chart.status = 'obese';
         chart.recommendation = 'admission required';
     }
 

@@ -26,14 +26,14 @@ function monkeyPatcher(commandName) {
                 }
 
                 if (this.upvotes > (this.upvotes + this.downvotes) * 0.66) {
-                  return 'hot';
+                    return 'hot';
                 } else if (balance >= 0 && (this.upvotes > 100 || this.downvotes > 100)) {
                     return 'controversial';
                 } else if (this.upvotes < this.downvotes) {
                     return "unpopular";
                 } else {
                     return 'new';
-              }
+                }
             }
         }
     }
