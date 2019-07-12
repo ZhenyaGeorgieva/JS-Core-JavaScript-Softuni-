@@ -19,9 +19,9 @@ function solve() {
         if (rowToDelete) {
             let row = rows[0].parentNode;
             row.parentNode.removeChild(row);
-            message.textContent = "Deleted.";
+            message.textContent = 'Deleted.';
         } else {
-            message.textContent = "Not found.";
+            message.textContent = 'Not found.';
         }
     }
 }
