@@ -10,20 +10,20 @@ function encodeAndDecodeMessages() {
         let encodedMessage = '';
 
         for (let index = 0; index < input.length; index++) {
-            encodedMessage+=String.fromCharCode(input[index].charCodeAt(0)+1);
+            encodedMessage += String.fromCharCode(input[index].charCodeAt(0) + 1);
         }
         console.log(encodedMessage)
-        decodeTextArea.value=encodedMessage;
-        sendTextArea.value='';
+        decodeTextArea.value = encodedMessage;
+        sendTextArea.value = '';
     });
 
-    decodeAndReaditButton.addEventListener('click',function(){
-        let input=decodeTextArea.value;
-        let decodedMessage='';
+    decodeAndReaditButton.addEventListener('click', function () {
+        let input = decodeTextArea.value;
+        let decodedMessage = '';
         for (let index = 0; index < input.length; index++) {
-            decodedMessage+=String.fromCharCode(input[index].charCodeAt(0)-1);
+            decodedMessage += String.fromCharCode(input[index].charCodeAt(0) - 1);
         }
-        decodeTextArea.value=decodedMessage;
+        decodeTextArea.value = decodedMessage;
         console.log(decodedMessage);
     })
 }

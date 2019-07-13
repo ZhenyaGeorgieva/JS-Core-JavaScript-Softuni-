@@ -10,7 +10,7 @@ function attachEventsListeners() {
         if (inputUnit == 'km') {
             numberInMeters = numberToConvert * 1000;
         } else if (inputUnit == 'm') {
-            numberInMeters = numberToConvert*1;
+            numberInMeters = numberToConvert * 1;
         } else if (inputUnit == 'cm') {
             numberInMeters = numberToConvert * 0.01;
         } else if (inputUnit == 'mm') {
@@ -33,7 +33,7 @@ function attachEventsListeners() {
         if (outputUnit == 'km') {
             result = numberInMeters / 1000;
         } else if (outputUnit == 'm') {
-            result = numberInMeters/1;
+            result = numberInMeters / 1;
         } else if (outputUnit == 'cm') {
             result = numberInMeters / 0.01;
         } else if (outputUnit == 'mm') {
@@ -48,6 +48,6 @@ function attachEventsListeners() {
             result = numberInMeters / 0.0254;
         }
         outputField.value = result;
-        console.log(result)
+        console.log(result);
     }
 }

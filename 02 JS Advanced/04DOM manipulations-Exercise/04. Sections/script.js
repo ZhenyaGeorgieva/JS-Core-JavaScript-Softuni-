@@ -11,6 +11,6 @@ function create(words) {
       divElement.addEventListener('click', () => {
          pElement.style.display = 'inline-block';
       })
-      container.appendChild(divElement)
+      container.appendChild(divElement);
    }
 }

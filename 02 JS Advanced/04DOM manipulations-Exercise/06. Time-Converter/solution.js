@@ -11,7 +11,6 @@ function attachEventsListeners() {
     let secondsField = document.getElementById('seconds');
 
 
-
     daysButton.addEventListener('click', () => {
         let days = daysField.value;
         let hours = days * 24;
