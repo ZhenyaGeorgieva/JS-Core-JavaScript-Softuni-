@@ -3,11 +3,9 @@ function solve(arr, firstIndex, secondIndex) {
     if (!Array.isArray(arr)) {
         return NaN;
     }
-
     if (firstIndex < 0) {
         firstIndex = 0;
     }
-
     if (firstIndex >= arr.length) {
         secondIndex = arr.length - 1;
     }
@@ -20,6 +18,7 @@ function solve(arr, firstIndex, secondIndex) {
     if (arr.length <= 0) {
         return 0;
     }
+
     return arr
         .map(Number)
         .slice(firstIndex, secondIndex + 1)

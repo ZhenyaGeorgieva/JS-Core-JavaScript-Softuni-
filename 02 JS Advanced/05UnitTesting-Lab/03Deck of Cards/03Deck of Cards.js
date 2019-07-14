@@ -10,7 +10,6 @@ function printDeckOfCards(cards) {
         if (!faces.includes(face) || !suits[suit]) {
             let error = new Error('Invalid card!');
             error.card = face + suit;
-
             throw error;
         }
 
@@ -20,7 +19,7 @@ function printDeckOfCards(cards) {
             toString: function () {
                 return this.face + this.suit;
             }
-        };
+        }
         return card;
     }
     try {
@@ -28,8 +27,8 @@ function printDeckOfCards(cards) {
             let c = x.split('');
             let s = c.pop();
             return makeCard(c.join(''), s);
-        });
-        console.log(resultCards.join(' '))
+        })
+        console.log(resultCards.join(' '));
     } catch (error) {
         console.log(`Invalid card: ${error.card}`);
     }

@@ -1,18 +1,18 @@
 const isSymmetric = require('./05Check for Symmetry');
 const assert = require('chai').assert;
 
-describe('Check for symmetry Tests', function() {
+describe('Check for symmetry Tests', function () {
 
     it('should return true when input array is symmetrical', function () {
         const inputArray = ['a', 'b', 'c', 'b', 'a'];
         const expected = true;
         const actual = isSymmetric(inputArray);
-   
+
         assert.equal(actual, expected, 'Returns false but input array is symmetrical');
     });
 
     it('should return true when input array has elements of different types', function () {
-        const inputArray = [1, 'text', {name: 'John'}, false, {name: 'John'}, 'text', 1];
+        const inputArray = [1, 'text', { name: 'John' }, false, { name: 'John' }, 'text', 1];
         const expected = true;
         const actual = isSymmetric(inputArray);
 
@@ -38,7 +38,7 @@ describe('Check for symmetry Tests', function() {
     it('should return false if input is string', function () {
         const input = 'abc';
         const expected = false;
-    const actual = isSymmetric(input);
+        const actual = isSymmetric(input);
 
         assert.equal(actual, expected, 'Returns true but input is not of correct type');
     });
@@ -47,7 +47,7 @@ describe('Check for symmetry Tests', function() {
         const input = 5;
         const expected = false;
         const actual = isSymmetric(input);
-        
+
         assert.equal(actual, expected, 'Returns true but input is not of correct type');
     });
 

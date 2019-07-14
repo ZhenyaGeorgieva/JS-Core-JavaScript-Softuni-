@@ -19,7 +19,7 @@ describe('RGBToHex Tests', function () {
         const expected = undefined;
         let actual = rgbToHexColor('abc', 0, 0);
         assert.equal(actual, expected);
-      actual = rgbToHexColor(-1, 0, 0);
+        actual = rgbToHexColor(-1, 0, 0);
         assert.equal(actual, expected);
         actual = rgbToHexColor(256, 0, 0);
         assert.equal(actual, expected);
@@ -31,7 +31,7 @@ describe('RGBToHex Tests', function () {
         assert.equal(actual, expected);
         actual = rgbToHexColor(0, -1, 0);
         assert.equal(actual, expected);
-        actual = rgbToHexColor(0, 256, 0);       
+        actual = rgbToHexColor(0, 256, 0);
         assert.equal(actual, expected);
     });
 
