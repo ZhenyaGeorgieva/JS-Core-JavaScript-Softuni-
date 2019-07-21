@@ -19,8 +19,8 @@ class Stringer {
         let resultString = this.innerString.slice(0, this.innerLength);
         if (this.innerString.length > this.innerLength) {
             resultString += '...';
-        }else if(resultString.length==0){
-            resultString+='...'
+        } else if (resultString.length == 0) {
+            resultString += '...';
         }
         return resultString;
     }

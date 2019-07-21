@@ -1,8 +1,8 @@
 class List {
     constructor() {
         this.collection = [];
-       this.size = 0;
-      
+        this.size = 0;
+
     };
 
     add(element) {
@@ -13,7 +13,7 @@ class List {
 
     remove(index) {
         if (index < 0 || index >= this.collection.length) {
-            throw new Error('Index out of range!')
+            throw new Error('Index out of range!');
         }
         this.size--;
         this.collection.splice(index, 1);
@@ -21,7 +21,7 @@ class List {
 
     get(index) {
         if (index < 0 || index >= this.collection.length) {
-            throw new Error('Index out of range!')
+            throw new Error('Index out of range!');
         };
         return this.collection[index];
     }

@@ -27,7 +27,7 @@ class Kitchen {
         }
         return this.actionsHistory.join('\n');
     }
-  
+
     addToMenu(mealName, neededProducts, price) {
         if (!this.menu.hasOwnProperty(mealName)) {
             this.menu[mealName] = {};
@@ -44,7 +44,7 @@ class Kitchen {
         let mealsInMenu = Object.keys(this.menu);
 
         if (mealsInMenu.length == 0) {
-            return `Our menu is not ready yet, please come later...`
+            return `Our menu is not ready yet, please come later...`;
         } else {
             let result = '';
             for (let meal of mealsInMenu) {
@@ -58,7 +58,7 @@ class Kitchen {
 
     makeTheOrder(meal) {
         if (!this.menu.hasOwnProperty(meal)) {
-            return `There is not ${meal} yet in our menu, do you want to order something else?`
+            return `There is not ${meal} yet in our menu, do you want to order something else?`;
         } else {
             let areProductsEnough = true;
             let neededProducts = this.menu[meal].products;
@@ -85,9 +85,9 @@ class Kitchen {
                         delete this.productsInStock[neededProduct];
                     }
                 }
-                return `Your order (${meal}) will be completed in the next 30 minutes and will cost you ${mealPrice}.`
+                return `Your order (${meal}) will be completed in the next 30 minutes and will cost you ${mealPrice}.`;
             } else {
-                return `For the time being, we cannot complete your order (${meal}), we are very sorry...`
+                return `For the time being, we cannot complete your order (${meal}), we are very sorry...`;
             }
         }
     }

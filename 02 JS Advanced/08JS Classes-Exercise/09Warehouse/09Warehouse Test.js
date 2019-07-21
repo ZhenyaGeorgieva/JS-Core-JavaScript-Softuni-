@@ -1,5 +1,5 @@
-let expect=require('chai').expect;
-let Warehouse=require('./09Warehouse');
+let expect = require('chai').expect;
+let Warehouse = require('./09Warehouse');
 
 describe('Warehouse', function () {
     describe('Get tests', function () {
@@ -144,7 +144,7 @@ describe('Warehouse', function () {
         it('should throw error if there is no products in warehouse', function () {
             let warehouse = new Warehouse(60);
 
-            expect(warehouse.revision()).to.be.equal('The warehouse is empty')
+            expect(warehouse.revision()).to.be.equal('The warehouse is empty');
         });
 
         it('should return string with all products', function () {

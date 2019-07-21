@@ -25,7 +25,7 @@ class Rat {
 
 let firstRat = new Rat("Peter");
 console.log(firstRat.toString()); // Peter
- 
+
 console.log(firstRat.getRats()); // []
 
 firstRat.unite(new Rat("George"));

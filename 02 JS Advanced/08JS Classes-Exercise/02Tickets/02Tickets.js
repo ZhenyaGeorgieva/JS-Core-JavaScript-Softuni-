@@ -5,7 +5,7 @@ function solve(arr, criteria) {
         constructor(destination, price, status) {
             this.destination = destination,
                 this.price = price,
-                this.status = status     
+                this.status = status
         };
     };
     for (let ticket of arr) {
@@ -15,10 +15,10 @@ function solve(arr, criteria) {
         let status = tokens[2];
         tickets.push(new Ticket(destination, price, status));
     };
-    if(criteria!='price'){
-        tickets=tickets.sort((a,b)=>a[criteria].localeCompare(b[criteria]));
-    }else{
-        tickets=tickets.sort((a,b)=>a[criteria]-b[criteria]);
+    if (criteria != 'price') {
+        tickets = tickets.sort((a, b) => a[criteria].localeCompare(b[criteria]));
+    } else {
+        tickets = tickets.sort((a, b) => a[criteria] - b[criteria]);
 
     }
     return tickets;
