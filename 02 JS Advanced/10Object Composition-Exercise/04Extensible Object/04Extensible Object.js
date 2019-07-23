@@ -5,8 +5,8 @@ function solve() {
             for (const [key, value] of entries) {
                 if (typeof value === 'function') {
                     Object.getPrototypeOf(this).key = value;
-                }else{
-                    this[key]=value;
+                } else {
+                    this[key] = value;
                 }
             }
         }
@@ -14,9 +14,9 @@ function solve() {
     return myObj;
 }
 
-const obj=solve();
+const obj = solve();
 obj.extend({
-    extensionMethod:function(){console.log('Attached to proto')},
-    extensionProperty:'someString'
+    extensionMethod: function () { console.log('Attached to proto') },
+    extensionProperty: 'someString'
 });
 console.log(obj)
