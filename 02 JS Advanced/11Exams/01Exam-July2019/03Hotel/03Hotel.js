@@ -41,7 +41,7 @@ class Hotel {
         result.push(`No ${roomType} rooms available!`);
         for (let room of Object.keys(this.rooms)) {
             if (this.rooms[room] > 0) {
-                result.push(`Available ${room} rooms: ${this.rooms[room]}.`)
+                result.push(`Available ${room} rooms: ${this.rooms[room]}.`);
             }
         }
         return result.join(' ');
@@ -49,10 +49,10 @@ class Hotel {
     roomService(currentBookingNumber, serviceType) {
         let byBookingNum = this.bookings.find(x => x.bookingNumber == currentBookingNumber);
         if (!byBookingNum) {
-            return `The booking ${currentBookingNumber} is invalid.`
+            return `The booking ${currentBookingNumber} is invalid.`;
         }
         if (!Object.keys(this.servicesPricing).includes(serviceType)) {
-            return `We do not offer ${serviceType} service.`
+            return `We do not offer ${serviceType} service.`;
         }
         if (byBookingNum.hasOwnProperty('services')) {
             byBookingNum.services.push(serviceType);
@@ -65,7 +65,7 @@ class Hotel {
     checkOut(currentBookingNumber) {
         let byBookingNum = this.bookings.find(x => x.bookingNumber == currentBookingNumber);
         if (!byBookingNum) {
-            return `The booking ${currentBookingNumber} is invalid.`
+            return `The booking ${currentBookingNumber} is invalid.`;
         }
         let currentRoomType = byBookingNum.roomType;
         this.rooms[currentRoomType] += 1;
@@ -76,29 +76,29 @@ class Hotel {
         let totalAdditionals = 0;
 
         if (!byBookingNum.hasOwnProperty('services')) {
-            return `We hope you enjoyed your time here, Mr./Mrs. ${byBookingNum.clientName}. The total amount of money you have to pay is ${total} BGN.`
+            return `We hope you enjoyed your time here, Mr./Mrs. ${byBookingNum.clientName}. The total amount of money you have to pay is ${total} BGN.`;
         } else {
             let additionalServices = byBookingNum.services;
             for (let service of additionalServices) {
                 totalAdditionals += Number(this.servicesPricing[service]);
             }
-            return `We hope you enjoyed your time here, Mr./Mrs. ${byBookingNum.clientName}. The total amount of money you have to pay is ${total + totalAdditionals} BGN. You have used additional room services, costing ${totalAdditionals} BGN.`
+            return `We hope you enjoyed your time here, Mr./Mrs. ${byBookingNum.clientName}. The total amount of money you have to pay is ${total + totalAdditionals} BGN. You have used additional room services, costing ${totalAdditionals} BGN.`;
         }
     }
     report() {
         let result = `${this.name.toUpperCase()} DATABASE:\n`;
         result += `--------------------\n`;
         if (this.bookings.length == 0) {
-            result += `There are currently no bookings.`
+            result += `There are currently no bookings.`;
         } else {
             let bookings = [];
             for (let booking of this.bookings) {
-                let current = `bookingNumber - ${booking.bookingNumber}\n`
-                current += `clientName - ${booking.clientName}\n`
-                current += `roomType - ${booking.roomType}\n`
+                let current = `bookingNumber - ${booking.bookingNumber}\n`;
+                current += `clientName - ${booking.clientName}\n`;
+                current += `roomType - ${booking.roomType}\n`;
                 current += `nights - ${booking.nights}`;
                 if (booking.hasOwnProperty('services')) {
-                    current += `services: ${booking.services.join(', ')}`
+                    current += `services: ${booking.services.join(', ')}`;
                 }
                 bookings.push(current);
             }

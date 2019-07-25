@@ -64,7 +64,7 @@ function solve() {
          newLi.textContent = 'HTML and CSS';
          resultList.appendChild(newLi);
       }
-      totalPriceElement.textContent=`Cost: ${Math.floor(totalPrice).toFixed(2)} BGN`
+      totalPriceElement.textContent = `Cost: ${Math.floor(totalPrice).toFixed(2)} BGN`
    }
 }
 solve();

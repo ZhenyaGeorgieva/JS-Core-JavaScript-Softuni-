@@ -69,11 +69,11 @@ class FilmStudio {
                 this.films.push(film);
                 return film;
             } else {
-                throw ('Invalid arguments')
+                throw ('Invalid arguments');
             }
 
         } else {
-            throw ('Invalid arguments count')
+            throw ('Invalid arguments count');
         }
     }
 
@@ -95,4 +95,4 @@ class FilmStudio {
         return output;
     }
 }
-module.exports=FilmStudio;
+module.exports = FilmStudio;
