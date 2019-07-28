@@ -5,6 +5,7 @@ class Vacation {
             this.budget = budget,
             this.kids = {}
     }
+
     registerChild(name, grade, budget) {
         if (budget < this.budget) {
             return `${name}'s money is not enough to go on vacation to ${this.destination}.`;
@@ -14,7 +15,7 @@ class Vacation {
             this.kids[grade].push(`${name}-${budget}`);
             return this.kids[grade];
         } else {
-            let filteredByName = this.kids[grade].filter(x => x==`${name}-${budget}`);//търсиме същоо име и същия бюджет
+            let filteredByName = this.kids[grade].filter(x => x == `${name}-${budget}`);
             if (filteredByName.length == 0) {
                 this.kids[grade].push(`${name}-${budget}`);
                 return this.kids[grade];
@@ -23,21 +24,21 @@ class Vacation {
             }
         }
     }
+
     removeChild(name, grade) {
         if (this.kids.hasOwnProperty(grade)) {
-            let filteredByName = this.kids[grade].filter(x => x.startsWith(name));// тук по точно е да го сплитнем, защото не е мн точно;
+            let filteredByName = this.kids[grade].filter(x => x.startsWith(name));
             if (filteredByName.length == 0) {
-                return `We couldn't find ${name} in ${grade} grade.`
+                return `We couldn't find ${name} in ${grade} grade.`;
             }
             let foundName = filteredByName[0];
             let findIndex = this.kids[grade].indexOf(foundName);
             this.kids[grade].splice(findIndex, 1);
             return this.kids[grade];
-
         }
     }
-    toString() {
 
+    toString() {
         let sorted = Object.keys(this.kids).sort((a, b) => a - b);
         if (this.numberOfChildren == 0) {
             return `No children are enrolled for the trip and the organization of ${this.organizer} falls out...`;
@@ -50,15 +51,16 @@ class Vacation {
             let currentNum = 0;
             for (let kid of this.kids[grade]) {
                 currentNum++;
-                result += `${currentNum}. ${kid}\n`
+                result += `${currentNum}. ${kid}\n`;
             }
         }
         return result;
     }
+
     get numberOfChildren() {
-        this._numOfChildren=0;
-        for (let key of Object.keys(this.kids) ){
-            this._numOfChildren+=this.kids[key].length;
+        this._numOfChildren = 0;
+        for (let key of Object.keys(this.kids)) {
+            this._numOfChildren += this.kids[key].length;
         }
         return this._numOfChildren;
     }

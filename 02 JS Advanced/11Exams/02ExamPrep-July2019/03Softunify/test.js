@@ -1,4 +1,4 @@
-const SoftUniFy = require('./03. Softunify_Ресурси');
+const SoftUniFy = require('./03. Softunify');
 const expect = require('chai').expect;
 
 describe('test', function () {
@@ -29,7 +29,7 @@ describe('test', function () {
         soft.downloadSong('Eminem', 'Venom', 'Knock, Knock let the devil in...');
         soft.downloadSong('Eminem', 'Phenomenal', 'IM PHENOMENAL...');
         soft.downloadSong('Dub Fx', 'Light Me On Fire', 'You can call me a liar.. ');
-        expect(soft.playSong('Venom1')).to.equal(expected)
+        expect(soft.playSong('Venom1')).to.equal(expected);
     });
     it('list of songs', function () {
         let expected = `Venom - Knock, Knock let the devil in...\nPhenomenal - IM PHENOMENAL...\nLight Me On Fire - You can call me a liar.. `
@@ -37,7 +37,7 @@ describe('test', function () {
         soft.downloadSong('Eminem', 'Venom', 'Knock, Knock let the devil in...');
         soft.downloadSong('Eminem', 'Phenomenal', 'IM PHENOMENAL...');
         soft.downloadSong('Dub Fx', 'Light Me On Fire', 'You can call me a liar.. ');
-        expect(soft.songsList).to.equal(expected)
+        expect(soft.songsList).to.equal(expected);
     })
     it('empty songlist message', function () {
         let expected = 'Your song list is empty';
@@ -49,15 +49,13 @@ describe('test', function () {
     });
     it('rate artist', function () {
         let soft = new SoftUniFy();
-        expect(soft.rateArtist('Eminem')).to.equal('The Eminem is not on your artist list.')
-        expect(soft.rateArtist('Eminem', 50)).to.equal('The Eminem is not on your artist list.')
+        expect(soft.rateArtist('Eminem')).to.equal('The Eminem is not on your artist list.');
+        expect(soft.rateArtist('Eminem', 50)).to.equal('The Eminem is not on your artist list.');
     });
-    it('rate artist', function(){
-        let soft=new SoftUniFy();
-soft.downloadSong('Eminem', 'Venom', 'Knock, Knock let the devil in...');
-expect(soft.rateArtist('Eminem')).to.equal(0)
-expect(soft.rateArtist('Eminem', 50)).to.equal(50)
-
+    it('rate artist', function () {
+        let soft = new SoftUniFy();
+        soft.downloadSong('Eminem', 'Venom', 'Knock, Knock let the devil in...');
+        expect(soft.rateArtist('Eminem')).to.equal(0);
+        expect(soft.rateArtist('Eminem', 50)).to.equal(50);
     })
-
 })
