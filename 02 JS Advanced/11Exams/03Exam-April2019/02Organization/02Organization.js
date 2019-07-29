@@ -9,9 +9,11 @@ class Organization {
             production: 0.35 * this.budget
         }
     }
+    
     get departmentsBudget() {
         return this._departmentsBudget;
     }
+    
     add(employeeName, department, salary) {
         if (this.departmentsBudget[department] >= Number(salary)) {
             let obj = {};
@@ -24,6 +26,7 @@ class Organization {
         }
         return `The salary that ${department} department can offer to you Mr./Mrs. ${employeeName} is $${this.departmentsBudget[department]}.`;
     }
+    
     employeeExists(employeeName) {
         let filteredByName = this.employees.filter(x => x.employeeName == employeeName);
         if (filteredByName.length > 0) {
@@ -31,6 +34,7 @@ class Organization {
         }
         return `Mr./Mrs. ${employeeName} is not working in ${this.name}.`;
     }
+    
     leaveOrganization(employeeName) {
         let employeeToLeave = this.employees.find(x => x.employeeName == employeeName);
         if (employeeToLeave) {
@@ -43,6 +47,7 @@ class Organization {
 
         return `Mr./Mrs. ${employeeName} is not working in ${this.name}.`;
     }
+    
     status() {
         let result = `${this.name.toUpperCase()} DEPARTMENTS:`;
         let marketing = this.employees.filter(x => x.department == 'marketing');
