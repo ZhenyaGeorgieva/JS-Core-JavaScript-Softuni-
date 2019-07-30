@@ -5,11 +5,8 @@ function mySolution() {
     let button = inputArea.getElementsByTagName('button')[0];
 
     button.addEventListener('click', addMessage);
-
     let pendingQuestions = document.getElementById('pendingQuestions');
-
     let openQuestions = document.getElementById('openQuestions');
-
 
     function addMessage() {
         let questionText = '';
@@ -54,7 +51,7 @@ function mySolution() {
         buttonOpen.className = 'open';
         buttonOpen.textContent = 'Open';
         buttonOpen.addEventListener('click', function () {
-        
+
             div.remove();
 
             let divR = document.createElement('div');
@@ -80,13 +77,13 @@ function mySolution() {
             let buttonReply = document.createElement('button');
             buttonReply.classList.add('reply');
             buttonReply.textContent = 'Reply';
-            buttonReply.addEventListener('click', ()=>{
-                if(buttonReply.textContent=='Reply'){
-                divReply.style.display = 'block';
-                buttonReply.textContent='Back';
-                }else{
+            buttonReply.addEventListener('click', () => {
+                if (buttonReply.textContent == 'Reply') {
+                    divReply.style.display = 'block';
+                    buttonReply.textContent = 'Back';
+                } else {
                     divReply.style.display = 'none';
-                    buttonReply.textContent='Reply'; 
+                    buttonReply.textContent = 'Reply';
                 }
             })
             divActions.appendChild(buttonReply);
@@ -105,15 +102,14 @@ function mySolution() {
             let buttonH = document.createElement('button');
             buttonH.classList.add('replyButton');
             buttonH.textContent = 'Send';
-            buttonH.addEventListener('click', function(){
+            buttonH.addEventListener('click', function () {
                 divReply.style.display = 'block';
-                if(input.value){
-                    let replyLi=document.createElement('li');
-                    replyLi.textContent=input.value;
+                if (input.value) {
+                    let replyLi = document.createElement('li');
+                    replyLi.textContent = input.value;
                     list.appendChild(replyLi);
-                    input.value='';
+                    input.value = '';
                 }
-                
             })
             divReply.appendChild(buttonH);
 
@@ -125,16 +121,13 @@ function mySolution() {
             divR.appendChild(divReply);
             openQuestions.appendChild(divR);
         })
+
         divActions.appendChild(buttonOpen);
         div.appendChild(divActions);
-
         pendingQuestions.appendChild(div);
-
 
         textArea.value = '';
         userName.value = '';
 
     }
-
-
 }

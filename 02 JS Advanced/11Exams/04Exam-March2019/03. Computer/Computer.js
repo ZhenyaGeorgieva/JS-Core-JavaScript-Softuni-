@@ -6,6 +6,7 @@ class Computer {
             this.taskManager = [],
             this.installedPrograms = []
     }
+
     installAProgram(name, requiredSpace) {
         if (this.hddMemory < requiredSpace) {
             throw new Error('There is not enough space on the hard drive')
@@ -18,6 +19,7 @@ class Computer {
             return obj;
         }
     }
+
     uninstallAProgram(name) {
         let foundByName = this.installedPrograms.find(x => x.name == name);
         if (!foundByName) {
@@ -30,6 +32,7 @@ class Computer {
             return this.installedPrograms;
         }
     }
+
     openAProgram(name) {
         let foundInInstalled = this.installedPrograms.find(x => x.name == name);
         let foundInTaskMan = this.taskManager.find(x => x.name == name);
@@ -47,18 +50,21 @@ class Computer {
         let currentTotalCPU = 0;
         for (let obj of this.taskManager) {
             currentTotalRam += Number(obj.ramUsage);
-            currentTotalCPU +=Number(obj.cpuUsage);
+            currentTotalCPU += Number(obj.cpuUsage);
         }
+
         if ((currentTotalRam + currentRamPercentage >= 100)
             && (currentTotalCPU + currentCPUPercentage >= 100)) {
-            throw new Error(`${name} caused out of memory exception`)
+            throw new Error(`${name} caused out of memory exception`);
         };
+
         if ((currentTotalRam + currentRamPercentage >= 100)) {
-            throw new Error(`${name} caused out of memory exception`)
+            throw new Error(`${name} caused out of memory exception`);
         };
         if ((currentTotalCPU + currentCPUPercentage >= 100)) {
-            throw new Error(`${name} caused out of cpu exception`)
+            throw new Error(`${name} caused out of cpu exception`);
         };
+
         let obj = {};
         obj.name = name;
         obj.ramUsage = Number(currentRamPercentage);
@@ -67,17 +73,17 @@ class Computer {
         this.taskManager.push(obj);
         return obj;
     }
-    taskManagerView(){
-        if(this.taskManager.length==0){
+
+    taskManagerView() {
+        if (this.taskManager.length == 0) {
             return 'All running smooth so far';
-        }else{
-            let result=[];
+        } else {
+            let result = [];
             for (let obj of this.taskManager) {
                 result.push(`Name - ${obj.name} | Usage - CPU: ${(Number(obj.cpuUsage)).toFixed(0)}%, RAM: ${(Number(obj.ramUsage)).toFixed(0)}%`);
             }
             return result.join(`\n`);
         }
-
     }
 }
 let computer = new Computer(4096, 7.5, 250000);
@@ -92,5 +98,5 @@ computer.openAProgram('Excel');
 computer.openAProgram('Solitare');
 
 console.log(computer.installedPrograms);
-console.log(('-').repeat(50)) // Separator
+console.log(('-').repeat(50));
 console.log(computer.taskManager);
